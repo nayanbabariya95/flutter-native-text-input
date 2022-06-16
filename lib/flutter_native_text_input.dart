@@ -440,6 +440,13 @@ class _NativeTextInputState extends State<NativeTextInput> {
       };
     }
 
+    if (widget.style != null && widget.style?.fontFamily != null) {
+      params = {
+        ...params,
+        "fontFamily": widget.style?.fontFamily.toString(),
+      };
+    }
+
     if (widget.style != null && widget.style?.color != null) {
       params = {
         ...params,
@@ -468,6 +475,16 @@ class _NativeTextInputState extends State<NativeTextInput> {
             widget.iosOptions?.placeholderStyle?.fontWeight.toString(),
       };
     }
+
+    if (widget.iosOptions?.placeholderStyle != null &&
+        widget.iosOptions?.placeholderStyle?.fontFamily != null) {
+      params = {
+        ...params,
+        "placeholderFontFamily":
+        widget.iosOptions?.placeholderStyle?.fontFamily.toString(),
+      };
+    }
+
     if (widget.placeholderColor != null) {
       params = {
         ...params,
