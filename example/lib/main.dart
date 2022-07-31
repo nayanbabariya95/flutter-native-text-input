@@ -21,9 +21,11 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomePage extends StatelessWidget {
+  final _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
 
   _onChangeText(value) => debugPrint("_onChangeText: $value");
+
   _onSubmittedText(value) => debugPrint("_onSubmittedText: $value");
 
   @override
@@ -77,6 +79,7 @@ class HomePage extends StatelessWidget {
             child: Container(
               height: 30,
               child: NativeTextInput(
+                controller: _controller,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.black87,
