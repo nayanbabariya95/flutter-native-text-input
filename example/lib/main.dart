@@ -79,7 +79,6 @@ class HomePage extends StatelessWidget {
             child: Container(
               height: 30,
               child: NativeTextInput(
-                controller: _controller,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.black87,
@@ -107,6 +106,28 @@ class HomePage extends StatelessWidget {
                 onSubmitted: _onSubmittedText,
                 focusNode: _focusNode,
               ),
+            ),
+          ),
+          DemoItem(
+            title: "Multiline Text Input",
+            child: NativeTextInput(
+              controller: _controller,
+              minHeightPadding: 14,
+              minLines: 1,
+              maxLines: 6,
+              keyboardType: KeyboardType.defaultType,
+              returnKeyType: ReturnKeyType.defaultAction,
+              iosOptions: IosOptions(
+                keyboardAppearance: Brightness.light,
+              ),
+              placeholder: "S().message",
+              textCapitalization: TextCapitalization.sentences,
+              onChanged: (val) {
+                print("onChanged => $val");
+              },
+              onTap: () {
+                print("onTap");
+              },
             ),
           ),
           Center(
