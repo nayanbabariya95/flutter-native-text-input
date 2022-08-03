@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_text_input/flutter_native_text_input.dart';
+import 'package:flutter_native_text_input_example/chat_screen.dart';
 import 'package:flutter_native_text_input_example/demo_item.dart';
 import 'package:flutter_native_text_input_example/more_use_case_listing_page.dart';
 
@@ -131,14 +132,20 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Center(
-            child: FlatButton(
-                color: Colors.blue,
-                colorBrightness: Brightness.dark,
-                child: const Text("View More Use Cases"),
+            child: ElevatedButton(
+                child: const Text('View More Use Cases'),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => MoreUseCaseListingPage()));
+                      builder: (_) => const MoreUseCaseListingPage()));
                 }),
+          ),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const ChatScreen()));
+                },
+                child: const Text('Chat screen')),
           ),
         ],
       ),
